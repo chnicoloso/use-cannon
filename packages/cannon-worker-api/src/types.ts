@@ -288,7 +288,7 @@ export type WorkerEventMessage =
 
 export type IncomingWorkerMessage = WorkerEventMessage | WorkerFrameMessage
 
-export type WorldPropName = 'axisIndex' | 'broadphase' | 'gravity' | 'iterations' | 'tolerance'
+export type WorldPropName = 'axisIndex' | 'broadphase' | 'gravity' | 'frictionGravity' | 'iterations' | 'tolerance'
 
 export type StepProps = {
   maxSubSteps?: number
@@ -362,6 +362,7 @@ export type CannonMessageMap = {
   setConstraintMotorSpeed: WithUUID<'setConstraintMotorSpeed', number>
   setFixedRotation: AtomicMessage<'fixedRotation'>
   setGravity: WorldMessage<'gravity'>
+  setFrictionGravity: WorldMessage<'frictionGravity'>
   setIsTrigger: AtomicMessage<'isTrigger'>
   setIterations: WorldMessage<'iterations'>
   setLinearDamping: AtomicMessage<'linearDamping'>

@@ -119,6 +119,9 @@ self.onmessage = ({ data }: { data: CannonMessage }) => {
     case 'setGravity':
       state.world.gravity.set(data.props[0], data.props[1], data.props[2])
       break
+    case 'setFrictionGravity':
+      state.world.frictionGravity.set(data.props[0], data.props[1], data.props[2])
+      break
     case 'setTolerance':
       if (state.world.solver instanceof GSSolver) {
         state.world.solver.tolerance = data.props
