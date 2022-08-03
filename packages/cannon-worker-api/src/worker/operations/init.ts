@@ -30,6 +30,7 @@ export const init = (
     broadphase,
     defaultContactMaterial,
     gravity,
+    frictionGravity,
     iterations,
     quatNormalizeFast,
     quatNormalizeSkip,
@@ -39,6 +40,7 @@ export const init = (
 ): void => {
   world.allowSleep = allowSleep
   world.gravity.set(...gravity)
+  world.frictionGravity.set(...frictionGravity)
   world.quatNormalizeFast = quatNormalizeFast
   world.quatNormalizeSkip = quatNormalizeSkip
 
