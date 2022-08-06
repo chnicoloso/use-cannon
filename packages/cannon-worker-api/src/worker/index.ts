@@ -120,6 +120,9 @@ self.onmessage = ({ data }: { data: CannonMessage }) => {
       state.world.gravity.set(data.props[0], data.props[1], data.props[2])
       break
     case 'setFrictionGravity':
+      if (!state.world.frictionGravity) {
+        state.world.frictionGravity = new Vec3();
+      }
       state.world.frictionGravity.set(data.props[0], data.props[1], data.props[2])
       break
     case 'setTolerance':

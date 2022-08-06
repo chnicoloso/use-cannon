@@ -70,7 +70,7 @@ export class CannonWorkerAPI extends EventEmitter {
     quaternions: Float32Array
   }
 
-  private config: Required<CannonWorkerProps>
+  private config: Required<Omit<CannonWorkerProps, 'frictionGravity'>> & { frictionGravity?: WorldProps['frictionGravity'] }
   private messageQueue: CannonMessage[] = []
   private worker: CannonWebWorker | null = null
 
@@ -80,7 +80,7 @@ export class CannonWorkerAPI extends EventEmitter {
     broadphase = 'Naive',
     defaultContactMaterial = { contactEquationStiffness: 1e6 },
     gravity = [0, -9.81, 0],
-    frictionGravity = gravity,
+    frictionGravity,
     iterations = 5,
     quatNormalizeFast = false,
     quatNormalizeSkip = 0,

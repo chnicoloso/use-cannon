@@ -302,7 +302,7 @@ export type WorldProps = {
   broadphase: Broadphase
   defaultContactMaterial: ContactMaterialOptions
   gravity: Triplet
-  frictionGravity: Triplet
+  frictionGravity?: Triplet
   iterations: number
   quatNormalizeFast: boolean
   quatNormalizeSkip: number
