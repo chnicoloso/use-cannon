@@ -120,6 +120,11 @@ self.onmessage = ({ data }: { data: CannonMessage }) => {
       state.world.gravity.set(data.props[0], data.props[1], data.props[2])
       break
     case 'setFrictionGravity':
+      if (!data.props) {
+        // User can reset frictionGravity back to default.
+        delete state.world.frictionGravity;
+        return;
+      }
       if (!state.world.frictionGravity) {
         state.world.frictionGravity = new Vec3();
       }
