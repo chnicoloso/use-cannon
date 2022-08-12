@@ -1,5 +1,5 @@
-import { Body, Vec3 } from 'cannon-es'
-import { GSSolver, NaiveBroadphase, SAPBroadphase, SplitSolver } from 'cannon-es'
+import type { Body } from 'cannon-es'
+import { GSSolver, NaiveBroadphase, SAPBroadphase, SplitSolver, Vec3 } from 'cannon-es'
 
 import type { CannonMessageProps } from '../../types'
 import type { DecoratedWorld } from '../state'

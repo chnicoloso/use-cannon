@@ -42,7 +42,10 @@ export class CannonWorkerAPI extends EventEmitter {
     this.postMessage({ op: 'setGravity', props: value })
   }
 
-  set frictionGravity(value: Triplet) {
+  get frictionGravity(): Triplet | undefined {
+    return this.config.frictionGravity;
+  }
+  set frictionGravity(value: Triplet | undefined) {
     this.config.frictionGravity = value
     this.postMessage({ op: 'setFrictionGravity', props: value })
   }
